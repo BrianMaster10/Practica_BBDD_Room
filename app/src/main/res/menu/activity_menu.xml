@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_listado_equipos"
+        android:title="Listado de Equipos" />
+    <item
+        android:id="@+id/menu_detalles_equipo"
+        android:title="Detalles de Equipo" />
+    <item
+        android:id="@+id/menu_clasificacion"
+        android:title="Clasificación" />
+    <item
+        android:id="@+id/menu_AltaResultado"
+        android:title="Alta de resultados" />
+    <item
+        android:id="@+id/menu_AltaEquipo"
+        android:title="Alta de equipos" />
+</menu>

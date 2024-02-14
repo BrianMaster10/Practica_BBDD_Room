@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@drawable/baloncesto">
+
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="395dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FFFFFF"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="395dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/usernameEditText"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColorHint="#FFFFFF" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEditText"
+        android:layout_marginTop="16dp"
+        android:background="#6200EE"
+        android:text="ACCEDER"
+        android:textColor="#FFFFFF" />
+
+    <!-- Mover el CheckBox al lado del botón de acceder -->
+    <CheckBox
+        android:id="@+id/checkBoxRecordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/loginButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:background="#0C0C0C"
+        android:text="Recordar usuario"
+        android:textColor="@color/white" />
+
+    <!-- Agregar un TextView con un enlace para el registro -->
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="#131212"
+        android:onClick="navigateToRegisterActivity"
+        android:text="¿No tienes una cuenta? Regístrate aquí"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

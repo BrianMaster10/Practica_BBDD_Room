@@ -3,9 +3,7 @@
     <item
         android:id="@+id/menu_listado_equipos"
         android:title="Listado de Equipos" />
-    <item
-        android:id="@+id/menu_detalles_equipo"
-        android:title="Detalles de Equipo" />
+
     <item
         android:id="@+id/menu_clasificacion"
         android:title="Clasificación" />

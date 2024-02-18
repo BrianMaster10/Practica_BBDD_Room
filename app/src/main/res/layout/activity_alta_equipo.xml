@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/alta_equipos_fondo"
     tools:context=".actividades.AltaEquipoActivity">
+
+    <EditText
+        android:id="@+id/nombreEquipoTextView"
+        android:layout_width="377dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:background="#00BCD4"
+        android:hint="Nombre del equipo"
+        android:inputType="text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/ciudadTextView"
+        android:layout_width="375dp"
+        android:layout_height="49dp"
+        android:layout_margin="16dp"
+        android:background="#00BCD4"
+        android:hint="Ciudad"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/nombreEquipoTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <EditText
+        android:id="@+id/pabellonTextView"
+        android:layout_width="380dp"
+        android:layout_height="58dp"
+        android:layout_margin="16dp"
+        android:background="#00BCD4"
+        android:hint="Pabellón"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/ciudadTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <EditText
+        android:id="@+id/nombreJugadorEditText"
+        android:layout_width="386dp"
+        android:layout_height="31dp"
+        android:layout_margin="16dp"
+        android:background="#00BCD4"
+        android:hint="Nombre del Jugador"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pabellonTextView" />
+
+    <EditText
+        android:id="@+id/dorsalEditText"
+        android:layout_width="377dp"
+        android:layout_height="55dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#00BCD4"
+        android:hint="Dorsal"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreJugadorEditText" />
+
+    <EditText
+        android:id="@+id/posicionEditText"
+        android:layout_width="381dp"
+        android:layout_height="53dp"
+        android:layout_margin="16dp"
+        android:background="#00BCD4"
+        android:hint="Posición"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dorsalEditText" />
+
+    <Button
+        android:id="@+id/agregarJugadorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Jugador"
+        app:layout_constraintTop_toBottomOf="@id/posicionEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <Button
+        android:id="@+id/guardarEquipoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar Equipo"
+        app:layout_constraintTop_toBottomOf="@id/agregarJugadorButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+    <FrameLayout
+        android:id="@+id/jugadoresContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/guardarEquipoButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,8 +10,10 @@
         android:layout_width="395dp"
         android:layout_height="60dp"
         android:backgroundTint="#FFFFFF"
+        android:drawableTint="#EDEDED"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#F4EEEE"
         android:textColorHint="#FFFFFF" />
 
     <EditText
@@ -21,8 +23,10 @@
         android:layout_below="@id/usernameEditText"
         android:layout_marginTop="16dp"
         android:backgroundTint="#FFFFFF"
+        android:drawableTint="#EFE6E6"
         android:hint="Contraseña"
         android:inputType="textPassword"
+        android:textColor="#EDE6E6"
         android:textColorHint="#FFFFFF" />
 
     <Button

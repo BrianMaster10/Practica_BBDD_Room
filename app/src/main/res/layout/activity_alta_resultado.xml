@@ -6,4 +6,97 @@
     android:layout_height="match_parent"
     tools:context=".actividades.AltaResultadoActivity">
 
+    <TextView
+        android:id="@+id/textViewEquipoLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equipo Local"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextEquipoLocal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del equipo local"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewEquipoLocal"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewEquipoVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equipo Visitante"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEquipoLocal" />
+
+    <EditText
+        android:id="@+id/editTextEquipoVisitante"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del equipo visitante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewEquipoVisitante"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEquipoLocal" />
+
+    <TextView
+        android:id="@+id/textViewGolesLocal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goles Local"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEquipoVisitante" />
+
+    <EditText
+        android:id="@+id/editTextGolesLocal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Goles del equipo local"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewGolesLocal"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEquipoVisitante" />
+
+    <TextView
+        android:id="@+id/textViewGolesVisitante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goles Visitante"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGolesLocal" />
+
+    <EditText
+        android:id="@+id/editTextGolesVisitante"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Goles del equipo visitante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewGolesVisitante"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGolesLocal" />
+
+    <TextView
+        android:id="@+id/textViewFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGolesVisitante" />
+
+    <EditText
+        android:id="@+id/editTextFecha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Fecha del partido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewFecha"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGolesVisitante" />
+
+    <Button
+        android:id="@+id/buttonGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFecha" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

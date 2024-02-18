@@ -7,8 +7,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.example.prctica_bbdd_room.databinding.ActivityMainBinding
 import com.example.prctica_bbdd_room.actividades.MenuActivity
+import com.example.prctica_bbdd_room.database.database.MyApp
+import com.example.prctica_bbdd_room.database.database.MyAppDatabase
 
 class LoginActivity : AppCompatActivity() {
 
@@ -54,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 sharedPreferences.edit().putBoolean("rememberUser", rememberUser).apply()
 
                 // Redirige al usuario al menú principal
+
                 redirectToMainMenu()
             } else {
                 // El nombre de usuario o la contraseña son incorrectos

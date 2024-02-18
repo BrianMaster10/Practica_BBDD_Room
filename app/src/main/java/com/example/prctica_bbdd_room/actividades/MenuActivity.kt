@@ -24,10 +24,6 @@ class MenuActivity : AppCompatActivity() {
                 navigateToListadoEquiposActivity()
                 return true
             }
-            R.id.menu_detalles_equipo -> {
-                navigateToDetallesEquipoActivity()
-                return true
-            }
             R.id.menu_clasificacion -> {
                 navigateToClasificacionActivity()
                 return true
@@ -67,5 +63,4 @@ class MenuActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    // Agrega más métodos de navegación según sea necesario
 }

@@ -30,7 +30,7 @@ class ListadoEquiposActivity : AppCompatActivity() {
         editTextBuscar = findViewById(R.id.editTextBuscar)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        equipoAdapter = EquipoAdapter(emptyList()) { equipo ->
+        equipoAdapter = EquipoAdapter(getEquipos()) { equipo ->
             // Manejar la selección del equipo aquí
             // Por ejemplo, iniciar una nueva actividad para mostrar detalles o gestionar jugadores
             val intent = Intent(this, DetallesEquipoActivity::class.java)
@@ -54,7 +54,10 @@ class ListadoEquiposActivity : AppCompatActivity() {
         cargarEquipos()
     }
 
-
+    private fun getEquipos(): List<Equipo> {
+        // Aquí obtén la lista de equipos desde tu base de datos o de donde sea que los tengas
+        return emptyList()
+    }
     private fun cargarEquipos() {
         lifecycleScope.launch(Dispatchers.Main) {
             val equipos = withContext(Dispatchers.IO) {
@@ -78,6 +81,4 @@ class ListadoEquiposActivity : AppCompatActivity() {
 //                navigateToDetallesEquipoActivity()
 //                return true
 //            }
-private fun Intent.putExtra(key: String, equipo: Equipo) {
 
-}

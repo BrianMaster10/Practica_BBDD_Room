@@ -7,7 +7,7 @@
 
 
     <EditText
-        android:id="@+id/nombreJugadorTextView"
+        android:id="@+id/nombreJugadorEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre del Jugador"
@@ -19,10 +19,10 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/dorsalJugadorEditText"
+        android:id="@+id/dorsalEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nombreJugadorTextView"
+        app:layout_constraintTop_toBottomOf="@id/nombreJugadorEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -33,10 +33,10 @@
         tools:layout_editor_absoluteY="56dp" />
 
     <EditText
-        android:id="@+id/posicionJugadorEditText"
+        android:id="@+id/posicionEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dorsalJugadorEditText"
+        app:layout_constraintTop_toBottomOf="@id/dorsalEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -49,7 +49,7 @@
         android:id="@+id/nombreEquipoEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/posicionJugadorEditText"
+        app:layout_constraintTop_toBottomOf="@id/posicionEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre del equipo"

@@ -16,8 +16,9 @@ import androidx.room.PrimaryKey
     indices = [Index("nombreEquiFK")])
 data class Jugador(
     @PrimaryKey
-    val nombre: String,
-    val dorsal: Int,
-    val posicion: String,
+    var nombre: String,
+    var dorsal: Int,
+    var posicion: String,
     val nombreEquiFK: String
+
 )

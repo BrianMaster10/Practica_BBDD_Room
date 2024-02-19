@@ -1,5 +1,7 @@
 package com.example.prctica_bbdd_room.actividades
 
+import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
 import android.widget.EditText
@@ -40,9 +42,24 @@ class AltaEquipoActivity : AppCompatActivity() {
 
         // Configurar el RecyclerView
         jugadorAdapter = JugadorAdapter(mutableListOf()) // Inicializar el adapter con una lista vacía
-        binding.jugadoresContainer.apply {
-            layoutManager = LinearLayoutManager(this@AltaEquipoActivity)
-            adapter = jugadorAdapter
+        binding.verJugadoresButton.setOnClickListener {
+            val nombreEquipo = binding.nombreEquipoTextView.text.toString()
+            lifecycleScope.launch {
+                try {
+                    // Obtener la lista de equipos
+                    val equipos = MyApp.database.equipoDao().getEquipos()
+                    if (equipos.isNotEmpty()) {
+                        startActivity<ListadoEquiposActivity>()
+                    } else {
+                        // Si no hay equipos, mostrar un mensaje indicando que no hay equipos creados
+                        Toast.makeText(this@AltaEquipoActivity, "No hay equipos creados", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: Exception) {
+                    // Manejar cualquier excepción al cargar los equipos
+                    Toast.makeText(this@AltaEquipoActivity, "Error al cargar los equipos", Toast.LENGTH_SHORT).show()
+                    e.printStackTrace()
+                }
+            }
         }
 
         // Configurar el OnClickListener para el botón de agregar jugador
@@ -55,7 +72,26 @@ class AltaEquipoActivity : AppCompatActivity() {
             guardarEquipo()
         }
     }
-
+    private fun cargarYMostrarJugadores() {
+        val nombreEquipo = binding.nombreEquipoTextView.text.toString()
+        lifecycleScope.launch {
+            try {
+                // Obtener la lista de jugadores asociados al equipo actual
+                val jugadores = MyApp.database.jugadorDao().getJugadoresByEquipo(nombreEquipo)
+                // Actualizar el adaptador del RecyclerView con la lista de jugadores
+                jugadorAdapter.updateItems(jugadores)
+            } catch (e: Exception) {
+                // Manejar cualquier excepción al cargar los jugadores
+                Toast.makeText(this@AltaEquipoActivity, "Error al cargar los jugadores", Toast.LENGTH_SHORT).show()
+                e.printStackTrace()
+            }
+        }
+    }
+    // Define una función de extensión en el nivel superior que te permitirá iniciar cualquier actividad desde cualquier lugar
+    inline fun <reified T : Any> Context.startActivity() {
+        val intent = Intent(this, T::class.java)
+        startActivity(intent)
+    }
     private fun agregarJugador() {
         // Obtener referencias a los elementos de la interfaz de usuario utilizando el binding
         val nombreJugadorEditText = binding.nombreJugadorEditText
@@ -82,7 +118,7 @@ class AltaEquipoActivity : AppCompatActivity() {
                         // Añadir el jugador a la lista local para que aparezca en el RecyclerView
                         jugadoresList.add(jugador)
                         jugadorAdapter.notifyDataSetChanged() // Notificar al adaptador que se ha actualizado la lista
-
+                        finish()
                     } catch (e: SQLiteConstraintException) {
                         // Manejar la excepción si hay una violación de la clave única
                         Toast.makeText(this@AltaEquipoActivity, "Error: El jugador ya existe", Toast.LENGTH_SHORT).show()
